@@ -9,7 +9,5 @@ jobs:
   print_id:
     runs-on: ubuntu-latest
     steps:
-      - name: Run a script
-        run: 'echo "Event of type: ${{ github.event_name }}"'
-      - name: Print ID
-        run: 'echo "The ID is ${{ github.event.client_payload.id }}"'
+      - name: Gam ID
+        run: 'echo "The Gam ID is ${{ github.event.client_payload.gam_id }}"'
