@@ -1,18 +1,16 @@
-name: artifact_deployed
+name: Webhook Action
 
 on:
-  # workflow_dispatch é obrigatório, para que o Artifactory possa disparar
-  # o fluxo de trabalho através da API REST do GitHub.
-  workflow_dispatch: 
-    # as entradas são opcionais, podem ser usadas para transmitir dados contextuais
-    # do evento JFrog para o fluxo de trabalho.
+  workflow_dispatch:
     inputs:
-      artifact_path: 
-        required: true 
-        type: string
+      id:
+        description: 'ID to print'
+        required: true
+        default: '12345'
+
 jobs:
-  build:
+  print_id:
     runs-on: ubuntu-latest
     steps:
-      - name: Print artifact_path
-        run: echo  The path is ${{ inputs.artifact_path }} 
+      - name: Print ID
+        run: echo "The ID is ${{ github.event.inputs.id }}"
