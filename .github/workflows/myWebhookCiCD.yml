@@ -4,11 +4,6 @@ on:
   repository_dispatch:
     types:
       - webhook
-    inputs:
-      id:
-        description: 'ID to print'
-        required: true
-        default: '12345'
 
 jobs:
   print_id:
