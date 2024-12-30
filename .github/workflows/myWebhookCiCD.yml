@@ -15,6 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a script
-      run: 'echo "Event of type: $GITHUB_EVENT_NAME"'
+      run: echo "Event of type: $GITHUB_EVENT_NAME"
       - name: Print ID
-      run: 'echo "The ID is ${{ github.event.inputs.id }}"'
+      run: echo "The ID is ${{ github.event.client_payload.id  }}"
